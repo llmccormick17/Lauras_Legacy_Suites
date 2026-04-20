@@ -1,147 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Book With Us - Laura's Legacy Suites</title>
+  <meta charset="UTF-8">
+  <title>Suites & Booking | Laura's Legacy Suites</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="book.html">Book With Us</a></li>
-            </ul>
-        </nav>
-    </header>
+<header class="site-header">
+  <div class="logo">Laura's Legacy Suites</div>
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="book.html" class="active">Suites & Booking</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-    <section class="hero">
-        <h1>Book Your Stay</h1>
-        <p class="tagline">Reserve Your Home Away From Home</p>
-    </section>
-
-    <div class="container">
-        <section>
-            <h2>Our Suites</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>The Sabre's Suite</h3>
-                    <p>A tribute to Buffalo's legendary hockey spirit. Perfect for Sports fans who bleed Blue and Gold!</p>
-                    <p><strong>Starting at: Contact for pricing</strong></p>
-                </div>
-
-                <div class="card">
-                    <h3>The Blue & White Room</h3>
-                    <p>Tailored for UB alumni and visiting families. A sophisticated space that celebrates academic excellence.</p>
-                    <p><strong>Starting at: Contact for pricing</strong></p>
-                </div>
-
-                <div class="card">
-                    <h3>The Electric City Room</h3>
-                    <p>Celebrating Buffalo's industrial Heritage. A blend of vintage grit and modern luxury.</p>
-                    <p><strong>Starting at: Contact for pricing</strong></p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Booking Request</h2>
-            <form>
-                <label for="name">Full Name *</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="phone">Phone Number *</label>
-                <input type="tel" id="phone" name="phone" required>
-
-                <label for="suite">Which Suite Are You Interested In? *</label>
-                <select id="suite" name="suite" required>
-                    <option value="">-- Select a Suite --</option>
-                    <option value="sabre">The Sabre's Suite</option>
-                    <option value="blue-white">The Blue & White Room</option>
-                    <option value="electric">The Electric City Room</option>
-                    <option value="undecided">I'm Not Sure Yet</option>
-                </select>
-
-                <label for="checkin">Check-in Date *</label>
-                <input type="date" id="checkin" name="checkin" required>
-
-                <label for="checkout">Check-out Date *</label>
-                <input type="date" id="checkout" name="checkout" required>
-
-                <label for="guests">Number of Guests *</label>
-                <input type="number" id="guests" name="guests" min="1" required>
-
-                <label for="occasion">What's the Occasion?</label>
-                <select id="occasion" name="occasion">
-                    <option value="">-- Select --</option>
-                    <option value="vacation">Vacation</option>
-                    <option value="business">Business Trip</option>
-                    <option value="family-visit">Family Visit</option>
-                    <option value="celebration">Celebration</option>
-                    <option value="reunion">Reunion</option>
-                    <option value="other">Other</option>
-                </select>
-
-                <label for="requests">Special Requests or Questions</label>
-                <textarea id="requests" name="requests" placeholder="Tell us about your needs, accessibility requirements, or any special requests..."></textarea>
-
-                <button type="submit">Submit Booking Request</button>
-            </form>
-        </section>
-
-        <section>
-            <h2>Why Book With Us?</h2>
-            <div class="beliefs-grid">
-                <div class="belief-card">
-                    <h4>🏠 Universal Design</h4>
-                    <p>Luxury accessible to everyone. Fixed tub-steps, safety rails, and anti-slip surfaces designed for all ages.</p>
-                </div>
-
-                <div class="belief-card">
-                    <h4>🔐 Smart Tech</h4>
-                    <p>24/7 concierge support and seamless keyless entry. Your comfort is our priority.</p>
-                </div>
-
-                <div class="belief-card">
-                    <h4>⭐ Premium Amenities</h4>
-                    <p>"Par-3" linen standards, premium Keurig blends, and locally-sourced snacks.</p>
-                </div>
-
-                <div class="belief-card">
-                    <h4>👨‍👩‍👧‍👦 Family Focused</h4>
-                    <p>Designed for multi-generational stays. Everyone finds comfort here.</p>
-                </div>
-
-                <div class="belief-card">
-                    <h4>💚 Community Impact</h4>
-                    <p>Your stay supports affordable housing initiatives in Buffalo neighborhoods.</p>
-                </div>
-
-                <div class="belief-card">
-                    <h4>🌟 Buffalo Pride</h4>
-                    <p>Where Buffalo Pride Meets Boutique Luxury. Experience the city like a local.</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Our Hospitality Promise</h2>
-            <div class="card">
-                <p><strong>"Everyone deserves a safe home-away-from-home."</strong></p>
-                <p>At Laura's Legacy Suites, we're not just offering accommodations—we're delivering an experience rooted in accessibility, luxury, and community impact. When you book with us, you're part of a greater mission to revitalize Buffalo neighborhoods through the Community Growth Fund.</p>
-            </div>
-        </section>
+<main>
+  <section class="hero hero-secondary hero-book">
+    <div class="hero-content narrow">
+      <h1>Choose Your Suite</h1>
+      <p>Three distinct suites, one cohesive boutique‑hotel experience. Thoughtfully designed for visiting families, faculty, professionals, and heritage travelers.</p>
     </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2026 Laura's Legacy Suites. Buffalo, NY</p>
-        <p>Invested in Buffalo's Future</p>
-    </footer>
+  <section class="section">
+    <div class="section-inner suite-grid">
+      <article class="suite-card suite-detailed">
+        <img src="images/sabres-plaque.jpg" alt="The Sabres Suite plaque">
+        <div class="suite-body">
+          <h2>The Sabres Suite</h2>
+          <p>A refined sports‑heritage suite with navy and gold accents, subtle hockey motifs, and premium bedding. Ideal for game‑day weekends, tournaments, and sports tourism.</p>
+          <ul class="suite-list">
+            <li>Queen bed + lounge seating</li>
+            <li>Smart TV with streaming</li>
+            <li>Subtle hockey‑inspired decor (no clutter)</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="suite-card suite-detailed">
+        <img src="images/blue-white-plaque.jpg" alt="The Blue & White Room plaque">
+        <div class="suite-body">
+          <h2>The Blue & White Room</h2>
+          <p>UB‑inspired academic elegance with clean lines, collegiate blue accents, and a calm, focused atmosphere for visiting faculty, alumni, and families.</p>
+          <ul class="suite-list">
+            <li>Queen bed + dedicated workspace</li>
+            <li>High‑speed fiber internet</li>
+            <li>Soft academic motif and art</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="suite-card suite-detailed">
+        <img src="images/electric-city-plaque.jpg" alt="The Electric City Suite plaque">
+        <div class="suite-body">
+          <h2>The Electric City Suite</h2>
+          <p>Industrial‑chic textures, warm metals, and bold typography celebrate Buffalo’s innovation history while delivering a modern, comfortable stay.</p>
+          <ul class="suite-list">
+            <li>Queen bed + reading nook</li>
+            <li>Industrial‑inspired lighting</li>
+            <li>Smart TV and streaming</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section highlight">
+    <div class="section-inner booking-layout">
+      <div>
+        <h2>Booking & Availability</h2>
+        <p>Dynamic pricing targets a weighted average nightly rate of approximately <strong>$375</strong> across the three‑bedroom configuration, with performance modeled across 50–90% occupancy.</p>
+        <p>For now, booking is managed directly with the host to ensure alignment with neighborhood standards and guest fit.</p>
+      </div>
+      <form class="booking-form">
+        <h3>Request a Stay</h3>
+        <label>
+          Name
+          <input type="text" name="name" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required>
+        </label>
+        <label>
+          Desired Check‑In
+          <input type="date" name="checkin" required>
+        </label>
+        <label>
+          Desired Check‑Out
+          <input type="date" name="checkout" required>
+        </label>
+        <label>
+          Preferred Suite
+          <select name="suite">
+            <option value="sabres">The Sabres Suite</option>
+            <option value="blue-white">The Blue & White Room</option>
+            <option value="electric-city">The Electric City Suite</option>
+            <option value="any">Flexible / Any Suite</option>
+          </select>
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="4" placeholder="Tell us about your visit (purpose, guests, accessibility needs)…"></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary">Submit Request</button>
+        <p class="form-note">This form can be wired to your preferred booking or email system.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> Laura's Legacy Suites · Buffalo, NY</p>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
