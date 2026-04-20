@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Book With Us - Laura's Legacy Suites</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="book.html">Book With Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Book Your Stay</h1>
+        <p class="tagline">Reserve Your Home Away From Home</p>
+    </section>
+
+    <div class="container">
+        <section>
+            <h2>Our Suites</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>The Sabre's Suite</h3>
+                    <p>A tribute to Buffalo's legendary hockey spirit. Perfect for Sports fans who bleed Blue and Gold!</p>
+                    <p><strong>Starting at: Contact for pricing</strong></p>
+                </div>
+
+                <div class="card">
+                    <h3>The Blue & White Room</h3>
+                    <p>Tailored for UB alumni and visiting families. A sophisticated space that celebrates academic excellence.</p>
+                    <p><strong>Starting at: Contact for pricing</strong></p>
+                </div>
+
+                <div class="card">
+                    <h3>The Electric City Room</h3>
+                    <p>Celebrating Buffalo's industrial Heritage. A blend of vintage grit and modern luxury.</p>
+                    <p><strong>Starting at: Contact for pricing</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Booking Request</h2>
+            <form>
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="suite">Which Suite Are You Interested In? *</label>
+                <select id="suite" name="suite" required>
+                    <option value="">-- Select a Suite --</option>
+                    <option value="sabre">The Sabre's Suite</option>
+                    <option value="blue-white">The Blue & White Room</option>
+                    <option value="electric">The Electric City Room</option>
+                    <option value="undecided">I'm Not Sure Yet</option>
+                </select>
+
+                <label for="checkin">Check-in Date *</label>
+                <input type="date" id="checkin" name="checkin" required>
+
+                <label for="checkout">Check-out Date *</label>
+                <input type="date" id="checkout" name="checkout" required>
+
+                <label for="guests">Number of Guests *</label>
+                <input type="number" id="guests" name="guests" min="1" required>
+
+                <label for="occasion">What's the Occasion?</label>
+                <select id="occasion" name="occasion">
+                    <option value="">-- Select --</option>
+                    <option value="vacation">Vacation</option>
+                    <option value="business">Business Trip</option>
+                    <option value="family-visit">Family Visit</option>
+                    <option value="celebration">Celebration</option>
+                    <option value="reunion">Reunion</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="requests">Special Requests or Questions</label>
+                <textarea id="requests" name="requests" placeholder="Tell us about your needs, accessibility requirements, or any special requests..."></textarea>
+
+                <button type="submit">Submit Booking Request</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Why Book With Us?</h2>
+            <div class="beliefs-grid">
+                <div class="belief-card">
+                    <h4>🏠 Universal Design</h4>
+                    <p>Luxury accessible to everyone. Fixed tub-steps, safety rails, and anti-slip surfaces designed for all ages.</p>
+                </div>
+
+                <div class="belief-card">
+                    <h4>🔐 Smart Tech</h4>
+                    <p>24/7 concierge support and seamless keyless entry. Your comfort is our priority.</p>
+                </div>
+
+                <div class="belief-card">
+                    <h4>⭐ Premium Amenities</h4>
+                    <p>"Par-3" linen standards, premium Keurig blends, and locally-sourced snacks.</p>
+                </div>
+
+                <div class="belief-card">
+                    <h4>👨‍👩‍👧‍👦 Family Focused</h4>
+                    <p>Designed for multi-generational stays. Everyone finds comfort here.</p>
+                </div>
+
+                <div class="belief-card">
+                    <h4>💚 Community Impact</h4>
+                    <p>Your stay supports affordable housing initiatives in Buffalo neighborhoods.</p>
+                </div>
+
+                <div class="belief-card">
+                    <h4>🌟 Buffalo Pride</h4>
+                    <p>Where Buffalo Pride Meets Boutique Luxury. Experience the city like a local.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Our Hospitality Promise</h2>
+            <div class="card">
+                <p><strong>"Everyone deserves a safe home-away-from-home."</strong></p>
+                <p>At Laura's Legacy Suites, we're not just offering accommodations—we're delivering an experience rooted in accessibility, luxury, and community impact. When you book with us, you're part of a greater mission to revitalize Buffalo neighborhoods through the Community Growth Fund.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Laura's Legacy Suites. Buffalo, NY</p>
+        <p>Invested in Buffalo's Future</p>
+    </footer>
+</body>
+</html>
