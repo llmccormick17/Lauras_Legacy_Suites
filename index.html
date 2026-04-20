@@ -5,45 +5,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laura's Legacy Suites</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header { background-color: #f8f9fa; padding: 20px; text-align: center; }
-        h1 { color: #007bff; }
-        .suite { margin: 20px; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
-        footer { text-align: center; padding: 10px; background-color: #f8f9fa; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #003d7a 0%, #004a94 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            margin-bottom: 40px;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header .tagline {
+            font-size: 1.3em;
+            font-style: italic;
+            opacity: 0.95;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .mission-section {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .mission-section h2 {
+            color: #003d7a;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .mission-section p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .suites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .suite {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #003d7a;
+        }
+        
+        .suite:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .suite h3 {
+            color: #003d7a;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .suite p {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .suites-title {
+            text-align: center;
+            color: #003d7a;
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+        
+        footer {
+            background-color: #003d7a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to Laura's Legacy Suites</h1>
-        <p>Where Buffalo Pride Meets Boutique Luxury</p>
+        <h1>Laura's Legacy Suites</h1>
+        <p class="tagline">Where Buffalo Pride Meets Boutique Luxury</p>
     </header>
-
-    <main>
-        <section class="mission">
+    
+    <div class="container">
+        <section class="mission-section">
             <h2>Our Mission</h2>
-            <p>At Laura's Legacy Suites, we believe in universal design and high-tech integration to create comfortable multi-generational stays. Our aim is to cater to everyone, making each stay memorable and accessible.</p>
-            <p>We are committed to community reinvestment and focus on providing affordable family housing in Buffalo neighborhoods.</p>
+            <p><strong>It's Not Just a Building; It is a Branded Hospitality Asset.</strong></p>
+            <p>We utilize universal design and high-tech integration to deliver a multi-generational stay that outclasses the status quo.</p>
+            
+            <h2 style="margin-top: 30px;">Beyond the Stay</h2>
+            <p>Laura's Legacy Suites is the engine for a greater mission. A significant portion of our earnings are reinvested into the Community Growth Fund, dedicated to acquiring and revitalizing Buffalo neighborhoods to provide high-quality, affordable family housing.</p>
         </section>
-
-        <section class="suites">
-            <h2>Suites</h2>
+        
+        <h2 class="suites-title">Our Suites</h2>
+        
+        <div class="suites-grid">
             <div class="suite">
                 <h3>The Sabre's Suite</h3>
-                <p>Experience elegance and comfort with modern amenities and a touch of classic design.</p>
+                <p>A tribute to Buffalo's legendary hockey spirit. Perfect for Sports fans who bleed Blue and Gold!</p>
             </div>
+            
             <div class="suite">
                 <h3>The Blue & White Room</h3>
-                <p>A tranquil retreat featuring soothing colors and beautiful furnishings.</p>
+                <p>Tailored for UB alumni and visiting families. A sophisticated space that celebrates academic excellence.</p>
             </div>
+            
             <div class="suite">
                 <h3>The Electric City Room</h3>
-                <p>Showcasing tech-savvy features for the modern traveler.</p>
+                <p>Celebrating Buffalo's industrial Heritage. A blend of vintage grit and modern luxury.</p>
             </div>
-        </section>
-    </main>
-
+        </div>
+    </div>
+    
     <footer>
-        <p>© 2026 Laura's Legacy Suites</p>
+        <p>&copy; 2026 Laura's Legacy Suites. Buffalo, NY</p>
     </footer>
 </body>
 </html>
