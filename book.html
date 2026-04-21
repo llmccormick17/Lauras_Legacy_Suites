@@ -75,40 +75,72 @@
         <p>Dynamic pricing targets a weighted average nightly rate of approximately <strong>$375</strong> across the three‑bedroom configuration, with performance modeled across 50–90% occupancy.</p>
         <p>For now, booking is managed directly with the host to ensure alignment with neighborhood standards and guest fit.</p>
       </div>
-      <form class="booking-form">
-        <h3>Request a Stay</h3>
-        <label>
-          Name
-          <input type="text" name="name" required>
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" required>
-        </label>
-        <label>
-          Desired Check‑In
-          <input type="date" name="checkin" required>
-        </label>
-        <label>
-          Desired Check‑Out
-          <input type="date" name="checkout" required>
-        </label>
-        <label>
-          Preferred Suite
-          <select name="suite">
-            <option value="sabres">The Sabres Suite</option>
-            <option value="blue-white">The Blue & White Room</option>
-            <option value="electric-city">The Electric City Suite</option>
-            <option value="any">Flexible / Any Suite</option>
-          </select>
-        </label>
-        <label>
-          Message
-          <textarea name="message" rows="4" placeholder="Tell us about your visit (purpose, guests, accessibility needs)…"></textarea>
-        </label>
-        <button type="submit" class="btn btn-primary">Submit Request</button>
-        <p class="form-note">This form can be wired to your preferred booking or email system.</p>
+      <div class="section-inner booking-layout">
+  <div>
+    <h2>Booking & Availability</h2>
+    <p>
+      Our tiered pricing model leverages high-demand "Anchor Suites" to target a weighted average 
+      nightly rate of <strong>$400</strong>. This maximizes RevPAR while maintaining a 
+      competitive edge in the Buffalo boutique market.
+    </p>
+    <p>
+      <strong>Automated Direct Booking:</strong> This portal bypasses third-party commissions (OTA fees), 
+      increasing our net margins and allowing for direct guest relationship management.
+    </p>
+  </div>
+
+  <div class="booking-widget-card">
+      <div class="widget-header">
+          <h3>Secure Your Stay</h3>
+          <p>Direct Booking | Best Rate Guaranteed</p>
+      </div>
+      
+      <form class="widget-body">
+          <div class="input-group">
+              <label for="suite">Select Your Heritage Suite</label>
+              <select id="suite" name="suite">
+                  <option value="sabres">The Sabres Suite (Premium) - $160/nt</option>
+                  <option value="blue-white">The Blue & White Room - $120/nt</option>
+                  <option value="electric-city">The Electric City Suite - $120/nt</option>
+              </select>
+          </div>
+
+          <div class="date-row">
+              <div class="input-group">
+                  <label for="checkin">Check-In</label>
+                  <input type="date" id="checkin" value="2026-05-04">
+              </div>
+              <div class="input-group">
+                  <label for="checkout">Check-Out</label>
+                  <input type="date" id="checkout" value="2026-05-11">
+              </div>
+          </div>
+
+          <div class="input-group">
+              <label for="guests">Number of Guests</label>
+              <select id="guests">
+                  <option>1 Guest</option>
+                  <option selected>2 Guests</option>
+                  <option>3 Guests</option>
+                  <option>4 Guests</option>
+              </select>
+          </div>
+
+          <div class="price-summary">
+              <span>Estimated Total:</span>
+              <span class="total-price">$1,120.00</span>
+          </div>
+
+          <button type="button" class="btn btn-primary" style="width:100%">Confirm Availability</button>
       </form>
+      
+      <div class="widget-footer">
+          <span>🛡️ SSL Secured</span>
+          <span>Universal Design Verified</span>
+      </div>
+  </div>
+  </div>
+>
     </div>
   </section>
 </main>
