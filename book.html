@@ -92,20 +92,19 @@
           </div>
           
 <form class="widget-body" action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST">
-
     <div class="input-group" style="margin-bottom: 15px;">
         <label style="display:block; font-weight:bold; color: #2c3e50;">Full Name</label>
-        <input type="text" name="guest_name" placeholder="John Doe" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px; color: #2c3e50;">
+        <input type="text" name="Name" placeholder="John Doe" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px; color: #2c3e50;" required>
     </div>
 
     <div class="date-row" style="display: flex; gap: 10px; margin-bottom: 15px;">
         <div class="input-group" style="flex: 1;">
             <label style="display:block; font-weight:bold; color: #2c3e50;">Email</label>
-            <input type="email" name="guest_email" placeholder="john@example.com" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px; color: #2c3e50;">
+            <input type="email" name="Email" placeholder="john@example.com" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px; color: #2c3e50;" required>
         </div>
         <div class="input-group" style="flex: 1;">
             <label style="display:block; font-weight:bold; color: #2c3e50;">Phone</label>
-            <input type="tel" name="guest_phone" placeholder="716-555-0123" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px; color: #2c3e50;">
+            <input type="tel" name="Phone" placeholder="716-555-0123" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px; color: #2c3e50;">
         </div>
     </div>
 
@@ -113,13 +112,13 @@
         <label style="display:block; font-weight:bold; color: #2c3e50; margin-bottom: 8px;">Select Your Heritage Suites:</label>
         <div style="display: flex; flex-direction: column; gap: 8px;">
             <label style="display: flex; align-items: center; padding: 10px; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; background: #fff; color: #2c3e50;">
-                <input type="checkbox" class="suite-check" value="sabres" onchange="syncSuites()" style="margin-right: 10px;"> 🏒 The Sabres Suite
+                <input type="checkbox" name="Suite_Sabres" class="suite-check" value="Selected" onchange="syncSuites()" style="margin-right: 10px;"> 🏒 The Sabres Suite
             </label>
             <label style="display: flex; align-items: center; padding: 10px; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; background: #fff; color: #2c3e50;">
-                <input type="checkbox" class="suite-check" value="blue-white" onchange="syncSuites()" style="margin-right: 10px;"> 🎓 The Blue & White Room
+                <input type="checkbox" name="Suite_Blue_White" class="suite-check" value="Selected" onchange="syncSuites()" style="margin-right: 10px;"> 🎓 The Blue & White Room
             </label>
             <label style="display: flex; align-items: center; padding: 10px; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; background: #fff; color: #2c3e50;">
-                <input type="checkbox" class="suite-check" value="electric" onchange="syncSuites()" style="margin-right: 10px;"> ⚡ The Electric City Suite
+                <input type="checkbox" name="Suite_Electric" class="suite-check" value="Selected" onchange="syncSuites()" style="margin-right: 10px;"> ⚡ The Electric City Suite
             </label>
         </div>
         <p id="suite-warning" style="font-size: 0.75rem; color: #e67e22; margin-top: 5px; display: none;">Maximum 2 suites per request.</p>
@@ -127,7 +126,7 @@
 
     <div class="input-group" style="margin-bottom: 15px;">
         <label for="guests" style="display: block; font-weight: bold; color: #2c3e50;">Number of Guests:</label>
-        <select id="guests" name="guests" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc; color: #2c3e50; background-color: #fff;">
+        <select id="guests" name="Total_Guests" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc; color: #2c3e50; background-color: #fff;">
             <option value="1">1 Guest</option>
             <option value="2">2 Guests</option>
             <option id="opt-3" value="3" disabled>3 Guests (Select 2 Suites to Unlock)</option>
@@ -135,9 +134,12 @@
         </select>
     </div>
 
-    <button type="button" class="btn btn-primary" style="width:100%; background-color:#e67e22; color:white; border:none; padding:12px; border-radius:4px; font-weight:bold; cursor:pointer;">Request Priority Booking</button>
-</form>
+    <input type="hidden" name="_next" value="https://yourname.github.io/thanks.html">
 
+    <button type="submit" class="btn btn-primary" style="width:100%; background-color:#e67e22; color:white; border:none; padding:12px; border-radius:4px; font-weight:bold; cursor:pointer;">
+        Request Priority Booking
+    </button>
+</form>
 
           
           <div class="widget-footer" style="margin-top: 15px; font-size: 0.75rem; text-align: center; color: #95a5a6;">
