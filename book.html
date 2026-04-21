@@ -109,11 +109,19 @@
     </div>
 
     <div class="input-group" style="margin-bottom: 15px;">
-        <label for="rooms" style="display: block; font-weight: bold; color: #2c3e50;">Number of Suites:</label>
-        <select id="rooms" name="rooms" onchange="updateGuestLimit()" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc; color: #2c3e50; background-color: #fff;">
-            <option value="1">1 Suite (Max 2 Guests)</option>
-            <option value="2">2 Suites (Legacy Bundle - Max 4 Guests)</option>
-        </select>
+        <label style="display:block; font-weight:bold; color: #2c3e50; margin-bottom: 8px;">Select Your Heritage Suites:</label>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="display: flex; align-items: center; padding: 10px; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; background: #fff; color: #2c3e50;">
+                <input type="checkbox" class="suite-check" value="sabres" onchange="syncSuites()" style="margin-right: 10px;"> 🏒 The Sabres Suite
+            </label>
+            <label style="display: flex; align-items: center; padding: 10px; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; background: #fff; color: #2c3e50;">
+                <input type="checkbox" class="suite-check" value="blue-white" onchange="syncSuites()" style="margin-right: 10px;"> 🎓 The Blue & White Room
+            </label>
+            <label style="display: flex; align-items: center; padding: 10px; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; background: #fff; color: #2c3e50;">
+                <input type="checkbox" class="suite-check" value="electric" onchange="syncSuites()" style="margin-right: 10px;"> ⚡ The Electric City Suite
+            </label>
+        </div>
+        <p id="suite-warning" style="font-size: 0.75rem; color: #e67e22; margin-top: 5px; display: none;">Maximum 2 suites per request.</p>
     </div>
 
     <div class="input-group" style="margin-bottom: 15px;">
@@ -121,13 +129,14 @@
         <select id="guests" name="guests" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc; color: #2c3e50; background-color: #fff;">
             <option value="1">1 Guest</option>
             <option value="2">2 Guests</option>
-            <option id="opt-3" value="3" disabled>3 Guests (Requires 2 Suites)</option>
-            <option id="opt-4" value="4" disabled>4 Guests (Requires 2 Suites)</option>
+            <option id="opt-3" value="3" disabled>3 Guests (Select 2 Suites to Unlock)</option>
+            <option id="opt-4" value="4" disabled>4 Guests (Select 2 Suites to Unlock)</option>
         </select>
     </div>
 
     <button type="button" class="btn btn-primary" style="width:100%; background-color:#e67e22; color:white; border:none; padding:12px; border-radius:4px; font-weight:bold; cursor:pointer;">Request Priority Booking</button>
 </form>
+
 
           
           <div class="widget-footer" style="margin-top: 15px; font-size: 0.75rem; text-align: center; color: #95a5a6;">
@@ -145,26 +154,44 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  function updateGuestLimit() {
-    var roomSelect = document.getElementById("rooms");
-    var guest3 = document.getElementById("opt-3");
-    var guest4 = document.getElementById("opt-4");
-    var guestSelect = document.getElementById("guests");
+  function syncSuites() {
+    const checks = document.querySelectorAll('.suite-check');
+    const checkedCount = Array.from(checks).filter(c => c.checked).length;
+    const warning = document.getElementById('suite-warning');
+    
+    const guest3 = document.getElementById('opt-3');
+    const guest4 = document.getElementById('opt-4');
+    const guestSelect = document.getElementById('guests');
 
-    if (roomSelect.value === "1") {
+    // Business Logic: Limit to 2 suites max for the Heritage Bundle
+    if (checkedCount > 2) {
+        warning.style.display = 'block';
+        // Uncheck the last one clicked
+        event.target.checked = false;
+        return;
+    } else {
+        warning.style.display = 'none';
+    }
+
+    // Guest Limit Logic
+    if (checkedCount >= 2) {
+        // Unlock 3 and 4 guests
+        guest3.disabled = false;
+        guest4.disabled = false;
+        guest3.style.color = "#2c3e50";
+        guest4.style.color = "#2c3e50";
+    } else {
+        // Lock to max 2 guests
         guest3.disabled = true;
         guest4.disabled = true;
         guest3.style.color = "#ccc";
         guest4.style.color = "#ccc";
         if (guestSelect.value > 2) { guestSelect.value = "2"; }
-    } else {
-        guest3.disabled = false;
-        guest4.disabled = false;
-        guest3.style.color = "#333";
-        guest4.style.color = "#333";
     }
   }
-  window.onload = updateGuestLimit;
+
+  window.onload = syncSuites;
 </script>
+
 </body>
 </html>
