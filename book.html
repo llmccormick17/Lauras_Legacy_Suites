@@ -109,7 +109,7 @@
         </div>
     </div>
 
-    <div class="input-group" style="margin-bottom: 15px;">
+    <div class="input-group" style="margin-bott    <div class="input-group" style="margin-bottom: 15px;">
         <label style="display:block; font-weight:bold; color: #2c3e50; margin-bottom: 8px;">Select Your Heritage Suites:</label>
         <div style="display: flex; flex-direction: column; gap: 8px;">
             <label style="display: flex; align-items: center; padding: 10px; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; background: #fff; color: #2c3e50;">
@@ -122,7 +122,6 @@
                 <input type="checkbox" name="Suite_Electric" class="suite-check" value="Selected" onchange="syncSuites()" style="margin-right: 10px;"> ⚡ The Electric City Suite
             </label>
         </div>
-        <p id="suite-warning" style="font-size: 0.75rem; color: #e67e22; margin-top: 5px; display: none;">Maximum 2 suites per request.</p>
     </div>
 
     <div class="input-group" style="margin-bottom: 15px;">
@@ -130,12 +129,13 @@
         <select id="guests" name="Total_Guests" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc; color: #2c3e50; background-color: #fff;">
             <option value="1">1 Guest</option>
             <option value="2">2 Guests</option>
-            <option id="opt-3" value="3" disabled>3 Guests (Select 2 Suites to Unlock)</option>
-            <option id="opt-4" value="4" disabled>4 Guests (Select 2 Suites to Unlock)</option>
+            <option id="opt-3" value="3" disabled>3 Guests (Select 2+ Suites to Unlock)</option>
+            <option id="opt-4" value="4" disabled>4 Guests (Select 2+ Suites to Unlock)</option>
             <option id="opt-5" value="5" disabled>5 Guests (Select 3 Suites to Unlock)</option>
-            <option id="opt-6" value="4" disabled>6 Guests (Select 3 Suites to Unlock)</option>
+            <option id="opt-6" value="6" disabled>6 Guests (Select 3 Suites to Unlock)</option>
         </select>
     </div>
+  
 
     <input type="hidden" name="_next" value="https://yourname.github.io/thanks.html">
 
@@ -159,46 +159,59 @@
 </footer>
 
 <script>
+  // Set the copyright year automatically
   document.getElementById('year').textContent = new Date().getFullYear();
 
   function syncSuites() {
     const checks = document.querySelectorAll('.suite-check');
     const checkedCount = Array.from(checks).filter(c => c.checked).length;
-    const warning = document.getElementById('suite-warning');
     
-    const guest3 = document.getElementById('opt-3');
-    const guest4 = document.getElementById('opt-4');
+    // Target the guest dropdown and the specific options
     const guestSelect = document.getElementById('guests');
+    const opt3 = document.getElementById('opt-3');
+    const opt4 = document.getElementById('opt-4');
+    const opt5 = document.getElementById('opt-5');
+    const opt6 = document.getElementById('opt-6');
 
-    // Business Logic: Limit to 2 suites max for the Heritage Bundle
-    if (checkedCount > 2) {
-        warning.style.display = 'block';
-        // Uncheck the last one clicked
-        event.target.checked = false;
-        return;
-    } else {
-        warning.style.display = 'none';
-    }
-
-    // Guest Limit Logic
-    if (checkedCount >= 2) {
-        // Unlock 3 and 4 guests
-        guest3.disabled = false;
-        guest4.disabled = false;
-        guest3.style.color = "#2c3e50";
-        guest4.style.color = "#2c3e50";
-    } else {
-        // Lock to max 2 guests
-        guest3.disabled = true;
-        guest4.disabled = true;
-        guest3.style.color = "#ccc";
-        guest4.style.color = "#ccc";
-        if (guestSelect.value > 2) { guestSelect.value = "2"; }
+    // TIER 1: 0 or 1 Suite Selected (Limit to 2 Guests)
+    if (checkedCount <= 1) {
+        [opt3, opt4, opt5, opt6].forEach(opt => {
+            opt.disabled = true;
+            opt.style.color = "#ccc";
+        });
+        if (guestSelect.value > 2) guestSelect.value = "2";
+    } 
+    
+    // TIER 2: 2 Suites Selected (Unlock up to 4 Guests)
+    else if (checkedCount === 2) {
+        // Unlock 3 & 4
+        opt3.disabled = false;
+        opt4.disabled = false;
+        opt3.style.color = "#2c3e50";
+        opt4.style.color = "#2c3e50";
+        
+        // Keep 5 & 6 locked
+        opt5.disabled = true;
+        opt6.disabled = true;
+        opt5.style.color = "#ccc";
+        opt6.style.color = "#ccc";
+        
+        if (guestSelect.value > 4) guestSelect.value = "4";
+    } 
+    
+    // TIER 3: All 3 Suites Selected (Unlock Full Collection - 6 Guests)
+    else if (checkedCount === 3) {
+        [opt3, opt4, opt5, opt6].forEach(opt => {
+            opt.disabled = false;
+            opt.style.color = "#2c3e50";
+        });
     }
   }
 
+  // Ensure logic runs on initial page load
   window.onload = syncSuites;
 </script>
+  
 
 </body>
 </html>
