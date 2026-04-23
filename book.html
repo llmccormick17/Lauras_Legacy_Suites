@@ -108,7 +108,39 @@
             <input type="tel" name="Phone" placeholder="716-555-0123" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px; color: #2c3e50;">
         </div>
     </div>
+        <div class="date-row" style="display: flex; gap: 10px; margin-bottom: 15px;">
+        <div class="input-group" style="flex: 1;">
+            <label style="display:block; font-weight:bold; color: #2c3e50; margin-bottom: 5px;">Requested Check-In</label>
+            <input type="date" name="CheckIn_Date" aria-label="Requested Check-In Date" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px; color: #2c3e50;">
+        </div>
+        <div class="input-group" style="flex: 1;">
+            <label style="display:block; font-weight:bold; color: #2c3e50; margin-bottom: 5px;">Requested Check-Out</label>
+            <input type="date" name="CheckOut_Date" aria-label="Requested Check-Out Date" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px; color: #2c3e50;">
+        </div>
+    </div>
 
+    <div class="input-group" style="margin-bottom: 15px;">
+        <label style="display:block; font-weight:bold; color: #2c3e50; margin-bottom: 8px;">Are your dates flexible?</label>
+        <div style="display: flex; gap: 25px; align-items: center;">
+            <label style="color: #2c3e50; cursor: pointer; display: flex; align-items: center;">
+                <input type="radio" name="Dates_Flexible" value="Yes" checked style="margin-right: 8px; transform: scale(1.2);"> Yes
+            </label>
+            <label style="color: #2c3e50; cursor: pointer; display: flex; align-items: center;">
+                <input type="radio" name="Dates_Flexible" value="No" style="margin-right: 8px; transform: scale(1.2);"> No (Fixed Dates)
+            </label>
+        </div>
+    </div>
+
+    <div class="input-group" style="margin-bottom: 20px;">
+        <label for="contact_pref" style="display: block; font-weight: bold; color: #2c3e50; margin-bottom: 8px;">How should we reach you?</label>
+        <select id="contact_pref" name="Contact_Preference" style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ccc; color: #2c3e50; background-color: #fff; font-size: 1rem;">
+            <option value="Email">Email (Best for detailed info)</option>
+            <option value="Text">Text Message (Quick & Accessible)</option>
+            <option value="Phone Call">Phone Call (Personalized conversation)</option>
+        </select>
+        <p style="font-size: 0.75rem; color: #7f8c8d; margin-top: 5px;">We honor your preferred communication style to ensure a comfortable booking process.</p>
+    </div>
+  
     <div class="input-group" style="margin-bott    <div class="input-group" style="margin-bottom: 15px;">
         <label style="display:block; font-weight:bold; color: #2c3e50; margin-bottom: 8px;">Select Your Heritage Suites:</label>
         <div style="display: flex; flex-direction: column; gap: 8px;">
